@@ -1,0 +1,256 @@
+:root {
+	--bg: #f6f7fb;
+	--surface: #ffffff;
+	--primary: #0b5cff;
+	--accent: #06b6d4;
+	--muted: #6b7280;
+	--text: #0f1724;
+	--radius: 12px;
+	--shadow-sm: 0 6px 18px rgba(15, 23, 36, 0.04);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+	margin: 0;
+	font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	background: var(--bg);
+	color: var(--text);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1.45;
+}
+
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+/* Header */
+/* Header (site-specific: navbar) */
+.site-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 1rem 0;
+}
+.logo {
+	font-weight: 700;
+	color: var(--primary);
+	font-size: 1.125rem;
+	text-decoration: none;
+}
+.main-nav a {
+	color: var(--muted);
+	text-decoration: none;
+	margin-left: 0.9rem;
+	padding: 0.45rem 0.6rem;
+	border-radius: 8px;
+	transition: color .12s, background .12s, transform .12s;
+}
+.main-nav a:hover { color: var(--primary); background: rgba(11,92,255,0.06); transform: translateY(-2px); }
+
+/* Navbar: coincide con tus HTML (`.navbar`, `.navbarL`, `.navbarC`, `.navbarR`) */
+.navbar {
+	width: 100%;
+	background: transparent;
+	padding: .7rem 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.navbar > div {
+	max-width: 1100px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+.navbarL, .navbarC, .navbarR { display: flex; align-items: center; gap: .6rem; }
+.navbarC { justify-content: center; }
+.navbarL { justify-content: flex-start; }
+.navbarR { justify-content: flex-end; }
+.navbarC a { color: var(--muted); text-decoration: none; margin: 0 .45rem; padding: .35rem .6rem; border-radius: 8px; transition: color .12s, background .12s, transform .12s; }
+.navbarC a strong { font-weight: 600; color: var(--text); }
+.navbarC a:hover { color: var(--primary); background: rgba(11,92,255,0.06); transform: translateY(-2px); }
+
+/* Page title sections presentes en tus HTML */
+.main-title, .title {
+	max-width: 1100px;
+	margin: 1.4rem auto;
+	padding: 1.6rem 1rem;
+	border-radius: 14px;
+	background: linear-gradient(135deg, rgba(11,92,255,0.04), rgba(6,182,212,0.02));
+	text-align: center;
+}
+.main-title h1, .title h1 { margin: 0; font-size: 2rem; color: var(--text); }
+.main-title p, .title p { margin: .6rem 0 0; color: var(--muted); }
+
+.introduction {
+	max-width: 770px;
+	margin: 1rem auto;
+	padding: 1.1rem 1rem;
+	background: rgba(255,255,255,0.7);
+	border-radius: 10px;
+	color: var(--text);
+	box-shadow: var(--shadow-sm);
+}
+
+
+/* Hero */
+.hero {
+	display: grid;
+	grid-template-columns: 1fr 380px;
+	gap: 2rem;
+	align-items: center;
+	padding: 2.4rem 0;
+}
+.hero h1 { font-size: 2rem; margin: 0 0 .5rem; }
+.hero p { margin: 0 0 1rem; color: var(--muted); }
+
+.btn {
+	display: inline-block;
+	background: var(--primary);
+	color: #fff;
+	text-decoration: none;
+	padding: 0.65rem 1rem;
+	border-radius: 10px;
+	font-weight: 600;
+	box-shadow: var(--shadow-sm);
+	transition: transform .12s ease, box-shadow .12s ease, opacity .12s;
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(11,92,255,0.12); }
+
+/* Cards/grid */
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 1rem;
+}
+.card {
+	background: var(--surface);
+	padding: 1rem;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow-sm);
+}
+.card h3 { margin: 0 0 .5rem; }
+.card p { margin: 0; color: var(--muted); }
+
+/* Forms & inputs */
+input[type="text"], input[type="email"], select, textarea {
+	width: 100%;
+	padding: .6rem .75rem;
+	border-radius: 8px;
+	border: 1px solid #e6e9ef;
+	background: #fff;
+	color: var(--text);
+}
+
+.footer { padding: 2rem 0; color: var(--muted); text-align: center; font-size: .95rem; }
+
+/* Utilities */
+.muted { color: var(--muted); }
+.center { text-align: center; }
+.img-fluid { max-width: 100%; height: auto; display: block; border-radius: 8px; }
+
+/* Responsive tweaks */
+@media (max-width: 880px) {
+	.hero { grid-template-columns: 1fr; text-align: left; }
+	.main-nav a { margin-left: .5rem; }
+}
+
+@media (max-width: 520px) {
+	.container { padding: .8rem; }
+	.hero h1 { font-size: 1.5rem; }
+}
+
+/* Small print for accessibility */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+/* Links */
+a { color: var(--primary); }
+
+/* End of styles */
+
+/* ============================= */
+/* Estilos ajustados a tus HTML */
+/* ============================= */
+
+/* Tipografía y texto */
+h1 { font-size: 2rem; margin: .2rem 0 .4rem; color: var(--text); }
+h2 { font-size: 1.25rem; margin: .2rem 0 .6rem; color: var(--text); }
+p { margin: .4rem 0; color: var(--muted); }
+strong { font-weight: 700; color: var(--text); }
+
+/* Enlaces básicos usados en tus HTML */
+a { color: var(--primary); text-decoration: none; }
+
+
+
+
+
+
+.navbar {
+	width: 100%;
+	background: rgba(255,255,255,0.6);
+	backdrop-filter: blur(6px);
+	border-bottom: 1px solid rgba(15,23,36,0.04);
+}
+.navbar > .navbarL,
+.navbar > .navbarC,
+.navbar > .navbarR {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: .6rem 1rem;
+	display: flex;
+	align-items: center;
+}
+.navbar > .navbarL { justify-content: flex-start; }
+.navbar > .navbarC { justify-content: center; gap: .6rem; }
+.navbar > .navbarR { justify-content: flex-end; }
+.navbarC a { color: var(--muted); padding: .25rem .6rem; border-radius: 8px; }
+.navbarC a:hover { color: var(--primary); background: rgba(11,92,255,0.05); }
+
+/* Logo placeholder (sitúa en .navbarL) */
+.navbarL .logo {
+	font-weight: 800;
+	color: var(--primary);
+	font-size: 1.05rem;
+}
+
+/* Secciones de título que usan tus HTML */
+.main-title, .title {
+	max-width: 1100px;
+	margin: 1.2rem auto;
+	padding: 1.2rem 1rem;
+	border-radius: 12px;
+	background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.75));
+	text-align: center;
+	box-shadow: 0 6px 18px rgba(15,23,36,0.03);
+}
+.main-title h1, .title h1 { font-size: 2rem; margin: 0; }
+
+/* Introducción en home.html */
+.introduction {
+	max-width: 760px;
+	margin: .8rem auto 2rem;
+	padding: 1rem 1rem;
+	background: rgba(255,255,255,0.9);
+	border-radius: 10px;
+	color: var(--text);
+}
+
+/* Ajustes responsive sencillos */
+@media (max-width: 720px) {
+	h1 { font-size: 1.5rem; }
+	.navbar > .navbarL, .navbar > .navbarC, .navbar > .navbarR { padding: .6rem .6rem; }
+	.main-title, .title { padding: .9rem .8rem; }
+}
+
+/* Fin: estilos específicos para tus archivos HTML */
+
+
