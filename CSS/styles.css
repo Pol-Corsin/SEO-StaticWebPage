@@ -100,6 +100,39 @@ body {
 	box-shadow: var(--shadow-sm);
 }
 
+/* Content sections used on the Home page (two-column blocks with text + image) */
+.content-flex {
+	max-width: 70%;
+	margin: 1rem auto;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+	background: rgba(255,255,255,0.6);
+	border-radius: 10px;
+	box-shadow: var(--shadow-sm);
+}
+.content-flex + .content-flex { margin-top: .8rem; }
+.content-text {
+	flex: 1 1 60%;
+}
+.content-text h3 { margin: 0 0 .5rem; }
+.content-text p { margin: 0; color: var(--muted); }
+.content-image {
+	flex: 0 0 380px;
+	max-width: 45%;
+}
+.content-image img { width: 100%; height: auto; display: block; border-radius: 10px; box-shadow: var(--shadow-sm); }
+
+/* If you want to reverse order and keep the same layout you can add `.reverse` to the container */
+.content-flex.reverse { flex-direction: row-reverse; }
+
+@media (max-width: 880px) {
+	.content-flex { flex-direction: column; text-align: left; padding: .9rem; }
+	.content-image { width: 100%; max-width: 100%; flex-basis: auto; }
+	.content-image img { border-radius: 8px; }
+}
+
 
 /* Hero */
 .hero {
