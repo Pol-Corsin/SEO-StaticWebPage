@@ -1,1 +1,10 @@
-# PROJECTE SEO StaticPage-With-Seo_ PolCorsin
+# PROJECTE SEO StaticPage-With-Seo_PolCorsin
+
+Objectius
+-  
+-
+-
+-
+
+---
+
