@@ -25,9 +25,9 @@
             <div class="nav-item">
                 <a href="keyboards.html"><strong>Keyboards</strong></a>
                 <ul class="submenu">
-                    <li><a href="keyboards.html">Overview</a></li>
                     <li><a href="sub-keyboards/mechanical.html">Mechanical</a></li>
                     <li><a href="sub-keyboards/membran.html">Membran</a></li>
+                    <li><a href="sub-keyboards/analogyc.html">Analogyc</a></li>
                 </ul>
             </div>
 
@@ -58,9 +58,6 @@
         </div>
     </div>
 
-
-    <!-- Encapsular contenido para poder difuminar al abrir dropdown -->
-    <div class="page-wrap">
 
     <!-- ? TITLE -->
     <div class="title"> <!-- width: 100%, centrado, bg gradient, height:30%-->
@@ -134,24 +131,8 @@
                 });
         </script>
     </div>
-
-    </div> <!-- /.page-wrap -->
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const items = document.querySelectorAll('.nav-item');
-            items.forEach(item => {
-                item.addEventListener('mouseenter', () => document.body.classList.add('nav-open'));
-                item.addEventListener('mouseleave', () => document.body.classList.remove('nav-open'));
-                const link = item.querySelector('a');
-                if (link) {
-                    link.addEventListener('focus', () => document.body.classList.add('nav-open'));
-                    link.addEventListener('blur', () => document.body.classList.remove('nav-open'));
-                }
-            });
-        });
-    </script>
 </body>
+
 
 
 </html>
