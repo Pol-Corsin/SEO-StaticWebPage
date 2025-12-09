@@ -21,10 +21,33 @@
         </div>
 
         <div class="navbarC"> <!-- ! NAVBAR CENTER-->
-            <!-- Links to other pages-->
-            <a href="keyboards.html"><strong>Keyboards</strong></a>
-            <a href="mouses.html"><strong>Mouses</strong></a>
-            <a href="tablets.html"><strong>Tablets</strong></a>
+            <!-- Links to other pages with dropdowns -->
+            <div class="nav-item">
+                <a href="keyboards.html"><strong>Keyboards</strong></a>
+                <ul class="submenu">
+                    <li><a href="keyboards.html">Overview</a></li>
+                    <li><a href="sub-keyboards/mechanical.html">Mechanical</a></li>
+                    <li><a href="sub-keyboards/membran.html">Membran</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-item">
+                <a href="mouses.html"><strong>Mouses</strong></a>
+                <ul class="submenu">
+                    <li><a href="mouses.html">Overview</a></li>
+                    <li><a href="#">Gaming Mouses</a></li>
+                    <li><a href="#">Wireless</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-item">
+                <a href="tablets.html"><strong>Tablets</strong></a>
+                <ul class="submenu">
+                    <li><a href="tablets.html">Overview</a></li>
+                    <li><a href="#">Drawing Tablets</a></li>
+                    <li><a href="#">Display Tablets</a></li>
+                </ul>
+            </div>
         </div>
 
         <div class="navbarR"> <!-- ! NAVBAR RIGHT-->
@@ -36,13 +59,16 @@
     </div>
 
 
+    <!-- Encapsular contenido para poder difuminar al abrir dropdown -->
+    <div class="page-wrap">
+
     <!-- ? TITLE -->
     <div class="title"> <!-- width: 100%, centrado, bg gradient, height:30%-->
         <h1>Keyboards</h1>
     </div>
 
     <div class="introduction">
-        <h2></h2> <!-- info-->
+        <h2></h2> <!-- TODO info-->
         <p></p>
     </div>
 
@@ -63,28 +89,38 @@
         <div class="content-text">
             <!-- ! 3 types --> <!-- TO DO !!!-->
             <div>
-                <a href="">
+                <a href="sub-keyboards/membran.html">
                     <h3>Membran</h3>
                     <!-- ! TD-->
-                    <p>bla bla afortable</p>
+                    <p>bla bla afortable</p> <!-- TODO Description-->
                 </a>
             </div>
 
             <div>
-                <a href="">
+                <a href="sub-keyboards/mechanical.html">
                     <h3>Mechanical</h3>
                 </a>
                 <!-- ! TD-->
-                <p>bla bla good in general</p>
+                <p>bla bla good in general</p> <!-- TODO Description-->
             </div>
             <div>
-                <a href=""> <!-- redirigir a la POSICION en la misma pagina-->
+                <a href="sub-keyboards/analogyc.html"> <!-- redirigir a la POSICION en la misma pagina-->
                     <h3>Analogyc</h3>
                 </a>
                 <!-- ! TD-->
-                <p> ba blaa</p>
+                <p> ba blaa</p> <!-- TODO Description-->
 
             </div>
+        </div>
+    </div>
+
+    <div class="content-flex">
+        <div class="content-text">
+            <h3>Recomendated Keyboards</h3>
+            <p>Dependiendo del uso principal que le vayas a dar, vas a tener que escojer entre distintos tipos de
+                teclado</p> <!-- ! ENG-->
+
+
         </div>
     </div>
 
@@ -98,8 +134,24 @@
                 });
         </script>
     </div>
-</body>
 
+    </div> <!-- /.page-wrap -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const items = document.querySelectorAll('.nav-item');
+            items.forEach(item => {
+                item.addEventListener('mouseenter', () => document.body.classList.add('nav-open'));
+                item.addEventListener('mouseleave', () => document.body.classList.remove('nav-open'));
+                const link = item.querySelector('a');
+                if (link) {
+                    link.addEventListener('focus', () => document.body.classList.add('nav-open'));
+                    link.addEventListener('blur', () => document.body.classList.remove('nav-open'));
+                }
+            });
+        });
+    </script>
+</body>
 
 
 </html>

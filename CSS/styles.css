@@ -449,6 +449,54 @@ a {
 	font-size: 1.05rem;
 }
 
+/* Dropdown / submenu styles */
+.nav-item {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	padding: 0 .25rem;
+}
+
+.nav-item > a { display: inline-block; padding: .4rem .6rem; }
+
+.submenu {
+	position: absolute;
+	top: calc(100% + 8px);
+	left: 50%;
+	transform: translateX(-50%) translateY(8px);
+	background: var(--surface);
+	border-radius: 10px;
+	box-shadow: 0 10px 30px rgba(15,23,36,0.12);
+	min-width: 180px;
+	padding: .5rem 0;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .14s ease, transform .14s ease;
+	z-index: 1200;
+}
+
+.submenu li { list-style: none; }
+.submenu li a { display: block; padding: .45rem .9rem; color: var(--text); text-align: left; }
+.submenu li a:hover { background: rgba(11,92,255,0.06); color: var(--primary); }
+
+/* Show on hover or focus-within for keyboard access */
+.nav-item:hover .submenu,
+.nav-item:focus-within .submenu { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
+
+/* Keep navbar above blur */
+.navbar { position: relative; z-index: 1300; }
+
+/* Cuando el dropdown está abierto, difuminar el resto de la página */
+body.nav-open .page-wrap {
+	filter: blur(4px) brightness(.75);
+	transition: filter .18s ease;
+	pointer-events: none; /* evita interacciones con el contenido mientras está abierto */
+}
+
+/* Permitir que el submenu sea interactivo aunque el body tenga pointer-events none (nav está fuera del page-wrap)
+   Asegurarse de que el submenu tenga z-index superior y esté fuera del flujo del page-wrap. */
+
+
 /* Secciones de título que usan tus HTML */
 .main-title,
 .title {

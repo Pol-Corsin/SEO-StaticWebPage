@@ -20,10 +20,33 @@
         </div>
 
         <div class="navbarC"> <!-- ! NAVBAR CENTER-->
-            <!-- Links to other pages-->
-            <a href="keyboards.html"><strong>Keyboards</strong></a>
-            <a href="mouses.html"><strong>Mouses</strong></a>
-            <a href="tablets.html"><strong>Tablets</strong></a>
+            <!-- Links to other pages with dropdowns -->
+            <div class="nav-item">
+                <a href="keyboards.html"><strong>Keyboards</strong></a>
+                <ul class="submenu">
+                    <li><a href="keyboards.html">Overview</a></li>
+                    <li><a href="sub-keyboards/mechanical.html">Mechanical</a></li>
+                    <li><a href="sub-keyboards/membran.html">Membran</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-item">
+                <a href="mouses.html"><strong>Mouses</strong></a>
+                <ul class="submenu">
+                    <li><a href="mouses.html">Overview</a></li>
+                    <li><a href="#">Gaming Mouses</a></li>
+                    <li><a href="#">Wireless</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-item">
+                <a href="tablets.html"><strong>Tablets</strong></a>
+                <ul class="submenu">
+                    <li><a href="tablets.html">Overview</a></li>
+                    <li><a href="#">Drawing Tablets</a></li>
+                    <li><a href="#">Display Tablets</a></li>
+                </ul>
+            </div>
         </div>
 
         <div class="navbarR"> <!-- ! NAVBAR RIGHT-->
@@ -39,6 +62,9 @@
         <h1>Home</h1>
         <p>The more you know, the better you play</p>
     </div>
+
+    <!-- Encapsular todo el contenido en page-wrap para poder difuminarlo -->
+    <div class="page-wrap">
 
     <!-- ! Introduction-->
     <div class="introduction"> <!-- width: 70%, centrado, bg: translucid opacity(5%~15%)-->
@@ -92,6 +118,25 @@
                 });
         </script>
     </div>
+
+    </div> <!-- /.page-wrap -->
+
+    <script>
+        // Añade clase 'nav-open' al body cuando un .nav-item tiene hover
+        document.addEventListener('DOMContentLoaded', function () {
+            const items = document.querySelectorAll('.nav-item');
+            items.forEach(item => {
+                item.addEventListener('mouseenter', () => document.body.classList.add('nav-open'));
+                item.addEventListener('mouseleave', () => document.body.classList.remove('nav-open'));
+                // accesibilidad: focus/blur para teclado
+                const link = item.querySelector('a');
+                if (link) {
+                    link.addEventListener('focus', () => document.body.classList.add('nav-open'));
+                    link.addEventListener('blur', () => document.body.classList.remove('nav-open'));
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
