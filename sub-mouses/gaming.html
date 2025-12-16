@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gaming Mouses — osu!</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <script>fetch("../partials/navbar.html").then(r => r.text()).then(d => document.getElementById('navbar').innerHTML = d);</script>
+    </div>
+    <div class="page-wrap">
+        <div class="main-title">
+            <h1>Gaming Mouses</h1>
+            <p class="muted">High-performance models and what matters for osu!.</p>
+        </div>
+        <section class="guide">
+            <h2>Qué buscar</h2>
+            <ul>
+                <li>Sensor de precisión (TrueMove, PixArt) sin aceleración.</li>
+                <li>Bajo latency y buen polling rate.</li>
+                <li>Botones y peso ajustable según preferencia.</li>
+            </ul>
+            <div class="content-image"><img data-src="../assets/images/mouses/gaming.jpg" alt="Gaming mouse"
+                    loading="lazy"></div>
+            <hr>
+            <section class="comments" data-comments-for="mouses-gaming">
+                <h4>Comentarios (<span id="comments-count-mouses-gaming">0</span>)</h4>
+                <ul id="comments-list-mouses-gaming" class="comments-list"></ul>
+                <div class="comment-form">
+                    <input id="comment-name-mouses-gaming" placeholder="Tu nombre" />
+                    <textarea id="comment-text-mouses-gaming" placeholder="Escribe un comentario"></textarea>
+                    <button onclick="submitComment('mouses-gaming')">Enviar comentario</button>
+                </div>
+            </section>
+        </section>
+    </div>
+    <div id="footer">
+        <script>fetch("../partials/footer.html").then(r => r.text()).then(d => document.getElementById('footer').innerHTML = d);</script>
+    </div>
+    <script src="../assets/js/main.js" defer></script>
+</body>
+
+</html>
