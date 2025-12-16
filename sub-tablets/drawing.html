@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drawing Tablets — osu!</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <script>fetch("../partials/navbar.html").then(r => r.text()).then(d => document.getElementById('navbar').innerHTML = d);</script>
+    </div>
+    <div class="page-wrap">
+        <div class="main-title">
+            <h1>Drawing Tablets</h1>
+            <p class="muted">Uso de tablets tipo drawing para jugar osu! y mapping.</p>
+        </div>
+        <section class="guide">
+            <h2>Características</h2>
+            <p>Las tablets tipo drawing suelen ser más grandes y orientadas al arte digital; para osu! el tamaño y la
+                resolución del área activa determinan la relación movimiento/distancia.</p>
+            <div class="content-image"><img data-src="../assets/images/tablets/drawing.jpg" alt="Drawing tablet"
+                    loading="lazy"></div>
+            <hr>
+            <section class="comments" data-comments-for="tablets-drawing">
+                <h4>Comentarios (<span id="comments-count-tablets-drawing">0</span>)</h4>
+                <ul id="comments-list-tablets-drawing" class="comments-list"></ul>
+                <div class="comment-form">
+                    <input id="comment-name-tablets-drawing" placeholder="Tu nombre" />
+                    <textarea id="comment-text-tablets-drawing" placeholder="Escribe un comentario"></textarea>
+                    <button onclick="submitComment('tablets-drawing')">Enviar comentario</button>
+                </div>
+            </section>
+        </section>
+    </div>
+    <div id="footer">
+        <script>fetch("../partials/footer.html").then(r => r.text()).then(d => document.getElementById('footer').innerHTML = d);</script>
+    </div>
+    <script src="../assets/js/main.js" defer></script>
+</body>
+
+</html>
