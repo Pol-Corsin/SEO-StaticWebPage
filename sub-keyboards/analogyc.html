@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analogyc Keyboards</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+    <!-- ? Navbar -->
+    <div id="navbar">
+        <script>
+            fetch("../partials/navbar.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("navbar").innerHTML = data;
+                }
+                );
+        </script>
+    </div>
+    <!-- ? MAIN CONTENT-->
+    <div class="page-wrap">
+
+        <!-- ! MAIN TITLE-->
+        <div class="main-title"> <!-- width: 100%, centrado, bg gradient, height: 40% --> <!-- ! TITLE -->
+            <h1>Keyboard Guide — Analogyc</h1>
+            <p class="muted">Analogyc-style keybinds and techniques for rhythm accuracy and comfort.</p>
+        </div>
+
+        <section class="guide">
+            <h2>Overview</h2>
+            <p>Analogyc keyboards (analog/continuous switches or specialized layouts) allow smoother control for certain
+                osu! playstyles where subtle actuation and hybrid inputs can improve streaming and alternating patterns.
+                This page covers recommended actuation, debounce, and bindings.</p>
+
+            <h3>Recommended Settings</h3>
+            <ul>
+                <li><strong>Polling rate:</strong> 1000 Hz if supported for lowest latency.</li>
+                <li><strong>Debounce:</strong> Keep debounce low (2-5 ms) if your firmware exposes it; avoid chatter.
+                </li>
+                <li><strong>Actuation:</strong> For analog switches use a mid-range actuation to avoid accidental
+                    presses while preserving control.</li>
+            </ul>
+
+            <h3>Keybinds & Technique</h3>
+            <p>Common osu! binds for analogyc setups are similar to keyboard play: index/middle alternating, with some
+                players using analog input to perform micro-adjustments. Try bind combinations and practice timing on
+                lower-BPM maps before applying to higher BPM streams.</p>
+
+            <div class="content-image">
+                <img data-src="../assets/images/keyboards/analogyc.jpg" alt="Analogyc keyboard example" loading="lazy">
+            </div>
+
+            <h3>Maintenance & Tips</h3>
+            <p>Keep firmware updated, remap easily with QMK/VIA-compatible boards, and always test in training maps to
+                validate your settings.</p>
+
+            <hr>
+
+            <section class="comments" data-comments-for="keyboards-analogyc">
+                <h4>Comentarios (<span id="comments-count-keyboards-analogyc">0</span>)</h4>
+                <ul id="comments-list-keyboards-analogyc" class="comments-list"></ul>
+                <div class="comment-form">
+                    <input id="comment-name-keyboards-analogyc" placeholder="Tu nombre" />
+                    <textarea id="comment-text-keyboards-analogyc" placeholder="Escribe un comentario"></textarea>
+                    <button onclick="submitComment('keyboards-analogyc')">Enviar comentario</button>
+                </div>
+            </section>
+        </section>
+
+    </div>
+
+
+
+    <!-- ! Footer-->
+    <div id="footer">
+        <script>
+            fetch("../partials/footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer").innerHTML = data;
+                });
+        </script>
+    </div>
+
+</body>
+
+</html>
