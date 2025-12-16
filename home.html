@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Know Your osu! Settings</title>
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 
@@ -60,83 +60,70 @@
     <!-- ? MAIN CONTENT -->
     <!-- Encapsular todo el contenido en page-wrap para poder difuminarlo -->
     <div class="page-wrap">
-    <div class="main-title"> <!-- width: 100%, centrado, bg gradient, height: 40% --> <!-- ! TITLE -->
-        <h1>Home</h1>
-        <p>The more you know, the better you play</p>
-    </div>
+        <div class="main-title"> <!-- width: 100%, centrado, bg gradient, height: 40% --> <!-- ! TITLE -->
+            <h1>Know Your osu! Settings</h1>
+            <p class="muted">Guides for mouse, tablet and keyboard playstyles — optimize your accuracy and comfort.</p>
+        </div>
 
 
-    <!-- ! Introduction-->
-    <div class="introduction"> <!-- width: 70%, centrado, bg: translucid opacity(5%~15%)-->
-        <h2>Welcome to Know Your Settings</h2>
-        <p>
-            This website is dedicated to helping gamers optimize their gaming experience by providing detailed
-            information on the best settings for various gaming peripherals such as keyboards, mouses, and tablets.
-            Whether you're a casual gamer or a professional esports player, having the right settings can make a
-            significant difference in your performance.
-        </p>
-    </div>
-
-    <!-- ! CF1-->
-    <div class="content-flex"> <!-- 2 structures, left text. right image-->
-        <div class="content-text">
-            <h3>Why Settings Matter</h3>
+        <!-- ! Introduction-->
+        <div class="introduction"> <!-- width: 70%, centrado, bg: translucid opacity(5%~15%)-->
+            <h2>Welcome to Know Your osu! Settings</h2>
             <p>
-                Properly configured settings can enhance responsiveness, accuracy, and comfort during gameplay. From
-                adjusting DPI settings on your mouse to customizing key bindings on your keyboard, every detail counts.
+                This site helps osu! players optimize their settings and find the best playstyle for their goals. Browse
+                guides for Mouse and Tablet players, and discover keyboard techniques for hit timing and streaming.
             </p>
+            <p>Official osu! site: <a href="https://osu.ppy.sh" target="_blank" rel="noopener">osu.ppy.sh</a></p>
         </div>
 
-        <div class="content-image">
-            <img src="" alt="Gaming Setup Image" loading="lazy">
+        <!-- ! CF1-->
+        <div class="grid">
+            <a class="card" href="mouses.html">
+                <h3>Mouse</h3>
+                <p>Settings for mouse players: DPI, sensitivity, grip and recommended hardware.</p>
+            </a>
+            <a class="card" href="tablets.html">
+                <h3>Tablet</h3>
+                <p>Tablet playstyles: drag vs hover, mapping, and recommended tablet settings.</p>
+            </a>
+            <a class="card" href="keyboards.html">
+                <h3>Keyboard</h3>
+                <p>Index, middle, ring techniques, binds and ergonomics for keyboard-oriented play.</p>
+            </a>
         </div>
-    </div>
 
-    <!-- ! CF2-->
-    <div class="content-flex">
-        <div class="content-image">
-            <img src="" alt="Settings Adjustment Image" loading="lazy">
+        <!-- ! CF2-->
+        <div class="content-flex">
+            <div class="content-image">
+                <img src="" alt="Settings Adjustment Image" loading="lazy">
+            </div>
+
+            <div class="content-text">
+                <h3>Explore Our Guides</h3>
+                <p>
+                    Browse through our comprehensive guides on keyboards, mouses, and tablets to find the optimal
+                    settings
+                    for your gaming style. Each guide includes step-by-step instructions, recommended configurations,
+                    and
+                    tips for fine-tuning your setup.
+                </p>
+            </div>
         </div>
 
-        <div class="content-text">
-            <h3>Explore Our Guides</h3>
-            <p>
-                Browse through our comprehensive guides on keyboards, mouses, and tablets to find the optimal settings
-                for your gaming style. Each guide includes step-by-step instructions, recommended configurations, and
-                tips for fine-tuning your setup.
-            </p>
+        <!-- ! Footer-->
+        <div id="footer">
+            <script>
+                fetch("partials/footer.html")
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById("footer").innerHTML = data;
+                    });
+            </script>
         </div>
-    </div>
-
-    <!-- ! Footer-->
-    <div id="footer">
-        <script>
-            fetch("partials/footer.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("footer").innerHTML = data;
-                });
-        </script>
-    </div>
 
     </div> <!-- /.page-wrap -->
 
-    <script>
-        // Añade clase 'nav-open' al body cuando un .nav-item tiene hover
-        document.addEventListener('DOMContentLoaded', function () {
-            const items = document.querySelectorAll('.nav-item');
-            items.forEach(item => {
-                item.addEventListener('mouseenter', () => document.body.classList.add('nav-open'));
-                item.addEventListener('mouseleave', () => document.body.classList.remove('nav-open'));
-                // accesibilidad: focus/blur para teclado
-                const link = item.querySelector('a');
-                if (link) {
-                    link.addEventListener('focus', () => document.body.classList.add('nav-open'));
-                    link.addEventListener('blur', () => document.body.classList.remove('nav-open'));
-                }
-            });
-        });
-    </script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 
 </html>
