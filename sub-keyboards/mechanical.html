@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanical Keyboards — osu! Guide</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <script>
+            fetch("../partials/navbar.html")
+                .then(response => response.text())
+                .then(data => { document.getElementById("navbar").innerHTML = data; });
+        </script>
+    </div>
+
+    <div class="page-wrap">
+        <div class="main-title">
+            <h1>Mechanical Keyboards</h1>
+            <p class="muted">Switches, actuation and ergonomics for precise osu! play.</p>
+        </div>
+
+        <section class="guide">
+            <h2>Por qué elegir mecánico</h2>
+            <p>Los teclados mecánicos ofrecen una respuesta táctil consistente, mejor durabilidad y opciones de switch
+                que permiten ajustar actuation y fuerza de actuación. Para osu!, muchos jugadores prefieren switches
+                lineales o táctiles con baja fuerza de actuación.</p>
+
+            <h3>Switches recomendados</h3>
+            <ul>
+                <li><strong>Lineales:</strong> Cherry MX Red, Gateron Red — suaves y consistentes para streams alternos.
+                </li>
+                <li><strong>Táctiles:</strong> Cherry MX Brown, Holy Panda — mejor feedback para timing.</li>
+                <li><strong>Low-profile / optical:</strong> Para setups compactos y rápidos.</li>
+            </ul>
+
+            <h3>Configuración</h3>
+            <p>Usa polling a 1000Hz, prueba debouncing desde 2ms y ajusta keycaps y switches para evitar fatiga. Si tu
+                placa soporta QMK/VIA, configura layers para binds alternativos y macros de prueba.</p>
+
+            <div class="content-image">
+                <img data-src="../assets/images/keyboards/mechanical.jpg" alt="Mechanical keyboard" loading="lazy">
+            </div>
+
+            <hr>
+
+            <section class="comments" data-comments-for="keyboards-mechanical">
+                <h4>Comentarios (<span id="comments-count-keyboards-mechanical">0</span>)</h4>
+                <ul id="comments-list-keyboards-mechanical" class="comments-list"></ul>
+                <div class="comment-form">
+                    <input id="comment-name-keyboards-mechanical" placeholder="Tu nombre" />
+                    <textarea id="comment-text-keyboards-mechanical" placeholder="Escribe un comentario"></textarea>
+                    <button onclick="submitComment('keyboards-mechanical')">Enviar comentario</button>
+                </div>
+            </section>
+        </section>
+
+    </div>
+
+    <div id="footer">
+        <script>
+            fetch("../partials/footer.html").then(r => r.text()).then(d => document.getElementById('footer').innerHTML = d);
+        </script>
+    </div>
+
+    <script src="../assets/js/main.js" defer></script>
+</body>
+
+</html>
