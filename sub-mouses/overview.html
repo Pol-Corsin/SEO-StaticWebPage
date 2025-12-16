@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mouses — Overview</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <script>fetch("../partials/navbar.html").then(r => r.text()).then(d => document.getElementById('navbar').innerHTML = d);</script>
+    </div>
+
+    <div class="page-wrap">
+        <div class="main-title">
+            <h1>Mouse Guide — Overview</h1>
+            <p class="muted">DPI, sensitivity, grip and hardware suggestions for osu!.</p>
+        </div>
+
+        <section class="guide">
+            <h2>Conceptos básicos</h2>
+            <p>El mouse es la elección más común para muchos jugadores de osu!. Ajustar DPI y sensibilidad correctamente
+                es clave: usa un equilibrio entre DPI (400–1600) y sensibilidad en juego para obtener una distancia/turn
+                ratio que te permita precisión y control.</p>
+
+            <h3>Grip</h3>
+            <p>Los grips habituales son claw, fingertip y palm. Cada uno cambia la forma de mover el ratón y la
+                preferencia es personal — prueba maps de precisión para decidir.</p>
+
+            <div class="content-image"><img data-src="../assets/images/mouses/overview.jpg" alt="Mouse overview"
+                    loading="lazy"></div>
+
+            <hr>
+
+            <section class="comments" data-comments-for="mouses-overview">
+                <h4>Comentarios (<span id="comments-count-mouses-overview">0</span>)</h4>
+                <ul id="comments-list-mouses-overview" class="comments-list"></ul>
+                <div class="comment-form">
+                    <input id="comment-name-mouses-overview" placeholder="Tu nombre" />
+                    <textarea id="comment-text-mouses-overview" placeholder="Escribe un comentario"></textarea>
+                    <button onclick="submitComment('mouses-overview')">Enviar comentario</button>
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <div id="footer">
+        <script>fetch("../partials/footer.html").then(r => r.text()).then(d => document.getElementById('footer').innerHTML = d);</script>
+    </div>
+    <script src="../assets/js/main.js" defer></script>
+</body>
+
+</html>
