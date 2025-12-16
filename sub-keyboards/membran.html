@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membran Keyboards — osu! Guide</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <script>
+            fetch("../partials/navbar.html")
+                .then(response => response.text())
+                .then(data => { document.getElementById("navbar").innerHTML = data; });
+        </script>
+    </div>
+
+    <div class="page-wrap">
+        <div class="main-title">
+            <h1>Membrane Keyboards</h1>
+            <p class="muted">Opciones económicas y prácticas para jugadores que buscan simplicidad.</p>
+        </div>
+
+        <section class="guide">
+            <h2>Ventajas y limitaciones</h2>
+            <p>Los teclados de membrana suelen ser más baratos y silenciosos. Aunque no tienen la misma sensación táctil
+                que los mecánicos, con una buena configuración de debounce y keybinds se pueden obtener resultados
+                sólidos en osu!.</p>
+
+            <h3>Configuración práctica</h3>
+            <ul>
+                <li>Verifica anti-ghosting y rollover si tu modelo lo soporta.</li>
+                <li>Ajusta sensaciones usando keycaps y pad de apoyo para reducir rebotes.</li>
+            </ul>
+
+            <div class="content-image">
+                <img data-src="../assets/images/keyboards/membran.jpg" alt="Membrane keyboard" loading="lazy">
+            </div>
+
+            <h3>Recomendaciones</h3>
+            <p>Para jugadores nuevos que no quieren invertir aún, una buena membrana con software de remapeo (si
+                disponible) es suficiente para practicar timing y alternados.</p>
+
+            <hr>
+
+            <section class="comments" data-comments-for="keyboards-membran">
+                <h4>Comentarios (<span id="comments-count-keyboards-membran">0</span>)</h4>
+                <ul id="comments-list-keyboards-membran" class="comments-list"></ul>
+                <div class="comment-form">
+                    <input id="comment-name-keyboards-membran" placeholder="Tu nombre" />
+                    <textarea id="comment-text-keyboards-membran" placeholder="Escribe un comentario"></textarea>
+                    <button onclick="submitComment('keyboards-membran')">Enviar comentario</button>
+                </div>
+            </section>
+        </section>
+
+    </div>
+
+    <div id="footer">
+        <script>
+            fetch("../partials/footer.html").then(r => r.text()).then(d => document.getElementById('footer').innerHTML = d);
+        </script>
+    </div>
+
+    <script src="../assets/js/main.js" defer></script>
+</body>
+
+</html>
