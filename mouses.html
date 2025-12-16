@@ -22,32 +22,32 @@
 
         <div class="navbarC"> <!-- ! NAVBAR CENTER-->
             <!-- Links to other pages-->
-                <div class="nav-item">
-                    <a href="keyboards.html"><strong>Keyboards</strong></a>
-                    <ul class="submenu">
+            <div class="nav-item">
+                <a href="keyboards.html"><strong>Keyboards</strong></a>
+                <ul class="submenu">
                     <li><a href="sub-keyboards/mechanical.html">Mechanical</a></li>
                     <li><a href="sub-keyboards/membran.html">Membran</a></li>
                     <li><a href="sub-keyboards/analogyc.html">Analogyc</a></li>
                 </ul>
-                </div>
+            </div>
 
-                <div class="nav-item">
-                    <a href="mouses.html"><strong>Mouses</strong></a>
-                    <ul class="submenu">
-                        <li><a href="mouses.html">Overview</a></li>
-                        <li><a href="#">Gaming Mouses</a></li>
-                        <li><a href="#">Wireless</a></li>
-                    </ul>
-                </div>
+            <div class="nav-item">
+                <a href="mouses.html"><strong>Mouses</strong></a>
+                <ul class="submenu">
+                    <li><a href="mouses.html">Overview</a></li>
+                    <li><a href="#">Gaming Mouses</a></li>
+                    <li><a href="#">Wireless</a></li>
+                </ul>
+            </div>
 
-                <div class="nav-item">
-                    <a href="tablets.html"><strong>Tablets</strong></a>
-                    <ul class="submenu">
-                        <li><a href="tablets.html">Overview</a></li>
-                        <li><a href="#">Drawing Tablets</a></li>
-                        <li><a href="#">Display Tablets</a></li>
-                    </ul>
-                </div>
+            <div class="nav-item">
+                <a href="tablets.html"><strong>Tablets</strong></a>
+                <ul class="submenu">
+                    <li><a href="tablets.html">Overview</a></li>
+                    <li><a href="#">Drawing Tablets</a></li>
+                    <li><a href="#">Display Tablets</a></li>
+                </ul>
+            </div>
         </div>
 
         <div class="navbarR"> <!-- ! NAVBAR RIGHT-->
@@ -61,38 +61,61 @@
     <!-- Encapsular todo en page-wrap para difuminar -->
     <div class="page-wrap">
 
-    <!-- ? TITLE -->
-    <div class="title"> <!-- width: 100%, centrado, bg gradient, height:30%-->
-        <h1>Mouses</h1>
-    </div>
+        <!-- ? TITLE -->
+        <div class="title"> <!-- width: 100%, centrado, bg gradient, height:30%-->
+            <h1>Mouse — osu! settings</h1>
+            <p class="muted">DPI, grip styles and sensitivity tips for aiming and stream control.</p>
+        </div>
+        <!-- ! Content: guides -->
+        <div class="content-flex">
+            <div class="content-image">
+                <img data-src="assets/images/mouse-dpi.webp" alt="Mouse DPI" class="img-fluid" loading="lazy">
+            </div>
+            <div class="content-text">
+                <h3>DPI & Sensitivity</h3>
+                <p>Find a stable DPI and in-game sensitivity that matches your hand movement. A typical osu! setup
+                    ranges from 400 to 1200 DPI with low sensitivity; preference and playstyle vary. Test on a large
+                    play area to avoid clipping.</p>
+            </div>
+        </div>
 
-    <!-- ! Footer-->
-    <div id="footer">
-        <script>
-            fetch("partials/footer.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("footer").innerHTML = data;
-                });
-        </script>
-    </div>
+        <div class="content-flex reverse">
+            <div class="content-image">
+                <img data-src="assets/images/mouse-grip.webp" alt="Grip styles" class="img-fluid" loading="lazy">
+            </div>
+            <div class="content-text">
+                <h3>Grip & Aim</h3>
+                <p>Grip style (palm, claw, fingertip) affects control and micro-adjustments. Practice tracking and
+                    flicking drills to find the best combination for your grip.</p>
+            </div>
+        </div>
+
+        <!-- Comments section for mouses (inside page-wrap) -->
+        <section class="comments" data-comments-for="mouses">
+            <h3>Comments <small id="comments-count-mouses" class="muted">0</small></h3>
+            <ul id="comments-list-mouses" class="comments-list"></ul>
+            <div class="comment-form">
+                <input id="comment-name-mouses" placeholder="Name (optional)" />
+                <textarea id="comment-text-mouses" placeholder="Write your comment" rows="3"></textarea>
+                <button onclick="submitComment('mouses')" class="btn">Post comment</button>
+            </div>
+        </section>
+
+        <!-- ! Footer-->
+        <div id="footer">
+            <script>
+                fetch("partials/footer.html")
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById("footer").innerHTML = data;
+                    });
+            </script>
+        </div>
 
     </div> <!-- /.page-wrap -->
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const items = document.querySelectorAll('.nav-item');
-            items.forEach(item => {
-                item.addEventListener('mouseenter', () => document.body.classList.add('nav-open'));
-                item.addEventListener('mouseleave', () => document.body.classList.remove('nav-open'));
-                const link = item.querySelector('a');
-                if (link) {
-                    link.addEventListener('focus', () => document.body.classList.add('nav-open'));
-                    link.addEventListener('blur', () => document.body.classList.remove('nav-open'));
-                }
-            });
-        });
-    </script>
+
+    <script src="assets/js/main.js" defer></script>
 </body>
 
 </html>
