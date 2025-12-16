@@ -62,8 +62,38 @@
 
     <!-- ? TITLE -->
     <div class="title"> <!-- width: 100%, centrado, bg gradient, height:30%-->
-        <h1>Tablets</h1>
+        <h1>Tablet — osu! settings</h1>
+        <p class="muted">Drag vs hover, area mapping and tablet configuration for osu! players.</p>
     </div>
+    <div class="introduction">
+        <h2>Tablet playstyles</h2>
+        <p>Tablet players usually choose between drag and hover styles. Drag players keep contact with the tablet
+            surface while moving, while hover players lift the pen between movements. Each style affects aim and
+            muscle memory.</p>
+    </div>
+
+    <div class="content-flex">
+        <div class="content-image">
+            <img data-src="assets/images/tablet-drag-vs-hover.webp" alt="Tablet drag vs hover" class="img-fluid" loading="lazy">
+        </div>
+        <div class="content-text">
+            <h3>Area & Mapping</h3>
+            <p>Mapping your tablet area to screen size changes sensitivity. Larger active area yields more
+                precision; smaller area increases speed. Experiment with mapping and OS sensitivity to find the
+                sweet spot.</p>
+        </div>
+    </div>
+
+    <!-- Comments section for tablets (inside page-wrap) -->
+    <section class="comments" data-comments-for="tablets">
+        <h3>Comments <small id="comments-count-tablets" class="muted">0</small></h3>
+        <ul id="comments-list-tablets" class="comments-list"></ul>
+        <div class="comment-form">
+            <input id="comment-name-tablets" placeholder="Name (optional)" />
+            <textarea id="comment-text-tablets" placeholder="Write your comment" rows="3"></textarea>
+            <button onclick="submitComment('tablets')" class="btn">Post comment</button>
+        </div>
+    </section>
 
     <!-- ! Footer-->
     <div id="footer">
@@ -78,20 +108,7 @@
 
     </div> <!-- /.page-wrap -->
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const items = document.querySelectorAll('.nav-item');
-            items.forEach(item => {
-                item.addEventListener('mouseenter', () => document.body.classList.add('nav-open'));
-                item.addEventListener('mouseleave', () => document.body.classList.remove('nav-open'));
-                const link = item.querySelector('a');
-                if (link) {
-                    link.addEventListener('focus', () => document.body.classList.add('nav-open'));
-                    link.addEventListener('blur', () => document.body.classList.remove('nav-open'));
-                }
-            });
-        });
-    </script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 
 </html>
