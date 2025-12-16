@@ -60,6 +60,8 @@
 
 
     <!-- ? TITLE -->
+        <!-- Encapsular todo el contenido en page-wrap para poder difuminarlo -->
+    <div class="page-wrap">
     <div class="title"> <!-- width: 100%, centrado, bg gradient, height:30%-->
         <h1>Keyboards</h1>
     </div>
@@ -131,6 +133,25 @@
                 });
         </script>
     </div>
+
+    </div> <!-- /.page-wrap -->
+
+    <script>
+        // Añade clase 'nav-open' al body cuando un .nav-item tiene hover
+        document.addEventListener('DOMContentLoaded', function () {
+            const items = document.querySelectorAll('.nav-item');
+            items.forEach(item => {
+                item.addEventListener('mouseenter', () => document.body.classList.add('nav-open'));
+                item.addEventListener('mouseleave', () => document.body.classList.remove('nav-open'));
+                // accesibilidad: focus/blur para teclado
+                const link = item.querySelector('a');
+                if (link) {
+                    link.addEventListener('focus', () => document.body.classList.add('nav-open'));
+                    link.addEventListener('blur', () => document.body.classList.remove('nav-open'));
+                }
+            });
+        });
+    </script>
 </body>
 
 
