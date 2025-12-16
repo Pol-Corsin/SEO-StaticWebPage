@@ -1,6 +1,7 @@
 User-agent: *
 Disallow:
 
-/assets/
+# Prevent crawling of assets folder if you want (optional)
+Disallow: /assets/
 
-Sitemap: https://blablabla.com/sitemap.xml
+Sitemap: https://your-domain.example/sitemap.xml
