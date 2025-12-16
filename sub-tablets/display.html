@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Display Tablets — osu!</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <script>fetch("../partials/navbar.html").then(r => r.text()).then(d => document.getElementById('navbar').innerHTML = d);</script>
+    </div>
+    <div class="page-wrap">
+        <div class="main-title">
+            <h1>Display Tablets</h1>
+            <p class="muted">Tablets con pantalla integrada: ventajas y consideraciones para jugar osu!.</p>
+        </div>
+        <section class="guide">
+            <h2>Pros y contras</h2>
+            <p>Los display tablets permiten interacción directa con la imagen, pero introducen latencia adicional en
+                algunos modelos. Para osu! es crítico probar la latencia y configurar el área activa conservadoramente.
+            </p>
+            <div class="content-image"><img data-src="../assets/images/tablets/display.jpg" alt="Display tablet"
+                    loading="lazy"></div>
+            <hr>
+            <section class="comments" data-comments-for="tablets-display">
+                <h4>Comentarios (<span id="comments-count-tablets-display">0</span>)</h4>
+                <ul id="comments-list-tablets-display" class="comments-list"></ul>
+                <div class="comment-form">
+                    <input id="comment-name-tablets-display" placeholder="Tu nombre" />
+                    <textarea id="comment-text-tablets-display" placeholder="Escribe un comentario"></textarea>
+                    <button onclick="submitComment('tablets-display')">Enviar comentario</button>
+                </div>
+            </section>
+        </section>
+    </div>
+    <div id="footer">
+        <script>fetch("../partials/footer.html").then(r => r.text()).then(d => document.getElementById('footer').innerHTML = d);</script>
+    </div>
+    <script src="../assets/js/main.js" defer></script>
+</body>
+
+</html>
