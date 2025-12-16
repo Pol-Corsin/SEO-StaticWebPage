@@ -60,100 +60,92 @@
 
 
     <!-- ? TITLE -->
-        <!-- Encapsular todo el contenido en page-wrap para poder difuminarlo -->
+    <!-- Encapsular todo el contenido en page-wrap para poder difuminarlo -->
     <div class="page-wrap">
-    <div class="title"> <!-- width: 100%, centrado, bg gradient, height:30%-->
-        <h1>Keyboards</h1>
-    </div>
-
-    <div class="introduction">
-        <h2></h2> <!-- TODO info-->
-        <p></p>
-    </div>
-
-    <div class="content-flex">
-        <div class="content-image">
-            <img src="" alt="Keyboard contF Imagen" loading="lazy">
-        </div>
-        <div class="content-text">
-            <h3>Why is a <strong>good</strong> keyboard important</h3>
-            <p></p>
-        </div>
-    </div>
-    <div class="content-flex">
-        <div class="content-image">
-            <img src="" alt="kbImg2" loading="lazy">
+        <div class="title"> <!-- width: 100%, centrado, bg gradient, height:30%-->
+            <h1>Keyboard — osu! playstyles</h1>
+            <p class="muted">Index, middle and ring techniques. Binds, ergonomics and rhythm practice.</p>
         </div>
 
-        <div class="content-text">
-            <!-- ! 3 types --> <!-- TO DO !!!-->
-            <div>
-                <a href="sub-keyboards/membran.html">
-                    <h3>Membran</h3>
-                    <!-- ! TD-->
-                    <p>bla bla afortable</p> <!-- TODO Description-->
-                </a>
+        <div class="introduction">
+            <h2>Overview</h2>
+            <p>Keyboard playstyles focus on which fingers you use when hitting notes and how you distribute timing
+                pressure across keys. Common techniques in osu! include index play, middle-index alternating, and
+                ring-finger usage for specific patterns.</p>
+        </div>
+
+        <div class="content-flex">
+            <div class="content-image">
+                <img data-src="assets/images/keyboard-setup.webp" alt="Keyboard setup" loading="lazy" class="img-fluid">
             </div>
-
-            <div>
-                <a href="sub-keyboards/mechanical.html">
-                    <h3>Mechanical</h3>
-                </a>
-                <!-- ! TD-->
-                <p>bla bla good in general</p> <!-- TODO Description-->
-            </div>
-            <div>
-                <a href="sub-keyboards/analogyc.html"> <!-- redirigir a la POSICION en la misma pagina-->
-                    <h3>Analogyc</h3>
-                </a>
-                <!-- ! TD-->
-                <p> ba blaa</p> <!-- TODO Description-->
-
+            <div class="content-text">
+                <h3>Why is a <strong>good</strong> keyboard important</h3>
+                <p>Key travel, debounce, and actuation force affect responsiveness. Mechanical switches typically
+                    provide predictable feedback for rhythm-heavy play; however the best choice depends on personal
+                    comfort and ergonomic needs.</p>
             </div>
         </div>
-    </div>
+        <div class="content-flex">
+            <div class="content-image">
+                <img src="" alt="kbImg2" loading="lazy">
+            </div>
 
-    <div class="content-flex">
-        <div class="content-text">
-            <h3>Recomendated Keyboards</h3>
-            <p>Dependiendo del uso principal que le vayas a dar, vas a tener que escojer entre distintos tipos de
-                teclado</p> <!-- ! ENG-->
+            <div class="content-text">
+                <!-- ! 3 types --> <!-- TO DO !!!-->
+                <div>
+                    <h3>Index play</h3>
+                    <p>Using the index finger for the majority of hits. Offers speed for simple patterns but can strain
+                        under long streams. Use light key actuation and short travel.</p>
+                </div>
 
+                <div>
+                    <h3>Middle / index alternation</h3>
+                    <p>Alternating between middle and index provides extra endurance for stream-heavy maps. Practice
+                        finger independence and consistent spacing on your key binds (e.g. Z/X or C/V).</p>
+                </div>
+                <div>
+                    <h3>Ring / hybrid techniques</h3>
+                    <p>Ring finger use and hybrid setups are less common but useful for certain patterns; ergonomics and
+                        habit play a major role.</p>
 
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- ! Footer-->
-    <div id="footer">
-        <script>
-            fetch("partials/footer.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("footer").innerHTML = data;
-                });
-        </script>
-    </div>
+        <div class="content-flex">
+            <div class="content-text">
+                <h3>Recommended binds & practice</h3>
+                <p>Common binds: `Z/X`, `C/V`, or customized thumb+index combos. Practice with metronome maps and slow
+                    stream maps to build stamina.</p>
+            </div>
+        </div>
+
+        <!-- Comments section for keyboards -->
+        <section class="comments" data-comments-for="keyboards">
+            <h3>Comments <small id="comments-count-keyboards" class="muted">0</small></h3>
+            <ul id="comments-list-keyboards" class="comments-list"></ul>
+            <div class="comment-form">
+                <input id="comment-name-keyboards" placeholder="Name (optional)" />
+                <textarea id="comment-text-keyboards" placeholder="Write your comment" rows="3"></textarea>
+                <button onclick="submitComment('keyboards')" class="btn">Post comment</button>
+            </div>
+        </section>
+
+        <!-- ! Footer-->
+        <div id="footer">
+            <script>
+                fetch("partials/footer.html")
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById("footer").innerHTML = data;
+                    });
+            </script>
+        </div>
 
     </div> <!-- /.page-wrap -->
 
-    <script>
-        // Añade clase 'nav-open' al body cuando un .nav-item tiene hover
-        document.addEventListener('DOMContentLoaded', function () {
-            const items = document.querySelectorAll('.nav-item');
-            items.forEach(item => {
-                item.addEventListener('mouseenter', () => document.body.classList.add('nav-open'));
-                item.addEventListener('mouseleave', () => document.body.classList.remove('nav-open'));
-                // accesibilidad: focus/blur para teclado
-                const link = item.querySelector('a');
-                if (link) {
-                    link.addEventListener('focus', () => document.body.classList.add('nav-open'));
-                    link.addEventListener('blur', () => document.body.classList.remove('nav-open'));
-                }
-            });
-        });
-    </script>
+    <script src="assets/js/main.js" defer></script>
 </body>
-
 
 
 </html>
