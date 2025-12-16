@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tablets — Overview</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <script>fetch("../partials/navbar.html").then(r => r.text()).then(d => document.getElementById('navbar').innerHTML = d);</script>
+    </div>
+    <div class="page-wrap">
+        <div class="main-title">
+            <h1>Tablet Guide — Overview</h1>
+            <p class="muted">Drag vs Hover, mapping and area settings explained.</p>
+        </div>
+        <section class="guide">
+            <h2>Introducción</h2>
+            <p>Las tablets ofrecen un control directo y suelen favorecer a jugadores que prefieren movimientos cortos y
+                precisos. La decisión entre drag y hover define la técnica y ajustes del área activa.</p>
+            <div class="content-image"><img data-src="../assets/images/tablets/overview.jpg" alt="Tablet overview"
+                    loading="lazy"></div>
+            <hr>
+            <section class="comments" data-comments-for="tablets-overview">
+                <h4>Comentarios (<span id="comments-count-tablets-overview">0</span>)</h4>
+                <ul id="comments-list-tablets-overview" class="comments-list"></ul>
+                <div class="comment-form">
+                    <input id="comment-name-tablets-overview" placeholder="Tu nombre" />
+                    <textarea id="comment-text-tablets-overview" placeholder="Escribe un comentario"></textarea>
+                    <button onclick="submitComment('tablets-overview')">Enviar comentario</button>
+                </div>
+            </section>
+        </section>
+    </div>
+    <div id="footer">
+        <script>fetch("../partials/footer.html").then(r => r.text()).then(d => document.getElementById('footer').innerHTML = d);</script>
+    </div>
+    <script src="../assets/js/main.js" defer></script>
+</body>
+
+</html>
