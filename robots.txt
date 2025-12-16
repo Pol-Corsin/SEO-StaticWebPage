@@ -1,0 +1,6 @@
+User-agent: *
+Disallow:
+
+/assets/
+
+Sitemap: https://blablabla.com/sitemap.xml
