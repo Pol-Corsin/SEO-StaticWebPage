@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wireless Mouses — osu!</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <script>fetch("../partials/navbar.html").then(r => r.text()).then(d => document.getElementById('navbar').innerHTML = d);</script>
+    </div>
+    <div class="page-wrap">
+        <div class="main-title">
+            <h1>Wireless Mouses</h1>
+            <p class="muted">Evaluando latencia y conveniencia para jugar osu! sin cables.</p>
+        </div>
+        <section class="guide">
+            <h2>¿Son viables?</h2>
+            <p>Hoy en día muchos mouses inalámbricos de gama alta ofrecen rendimiento comparable al cableado. Asegúrate
+                de usar modo de baja latencia (pro wireless mode) y prueba estabilidad antes de competir.</p>
+            <div class="content-image"><img data-src="../assets/images/mouses/wireless.jpg" alt="Wireless mouse"
+                    loading="lazy"></div>
+            <hr>
+            <section class="comments" data-comments-for="mouses-wireless">
+                <h4>Comentarios (<span id="comments-count-mouses-wireless">0</span>)</h4>
+                <ul id="comments-list-mouses-wireless" class="comments-list"></ul>
+                <div class="comment-form">
+                    <input id="comment-name-mouses-wireless" placeholder="Tu nombre" />
+                    <textarea id="comment-text-mouses-wireless" placeholder="Escribe un comentario"></textarea>
+                    <button onclick="submitComment('mouses-wireless')">Enviar comentario</button>
+                </div>
+            </section>
+        </section>
+    </div>
+    <div id="footer">
+        <script>fetch("../partials/footer.html").then(r => r.text()).then(d => document.getElementById('footer').innerHTML = d);</script>
+    </div>
+    <script src="../assets/js/main.js" defer></script>
+</body>
+
+</html>
